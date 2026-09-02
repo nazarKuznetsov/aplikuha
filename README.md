@@ -25,4 +25,10 @@ npm run check
 npm test
 ```
 
-Both commands run the dependency-free scaffold checks. No package installation is required.
+`npm run check` validates the scaffold. `npm test` uses Node's built-in test
+discovery and runs every test file in `test/`. No package installation is
+required.
+
+The server serves `index.html` for `/` when that file is present, with a
+`text/html; charset=utf-8` content type. Requests that escape the project root
+are rejected.

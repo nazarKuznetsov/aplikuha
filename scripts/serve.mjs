@@ -1,9 +1,9 @@
 import { createReadStream, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
-import { extname, join, normalize } from "node:path";
+import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = fileURLToPath(new URL("../", import.meta.url));
+const root = resolve(fileURLToPath(new URL("../", import.meta.url)));
 const port = Number(process.env.PORT || 3000);
 const contentTypes = {
   ".css": "text/css; charset=utf-8",
@@ -14,11 +14,20 @@ const contentTypes = {
 };
 
 const server = createServer((request, response) => {
-  const pathname = new URL(request.url, "http://localhost").pathname;
-  const relativePath = pathname === "/" ? "README.md" : pathname.replace(/^\/+/, "");
-  const filePath = normalize(join(root, relativePath));
+  let relativePath;
 
-  if (!filePath.startsWith(root) || !existsSync(filePath) || !statSync(filePath).isFile()) {
+  try {
+    const pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
+    relativePath = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
+  } catch {
+    response.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+    response.end("Bad request");
+    return;
+  }
+
+  const filePath = resolve(root, relativePath);
+
+  if (!filePath.startsWith(`${root}${sep}`) || !existsSync(filePath) || !statSync(filePath).isFile()) {
     response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
     response.end("Not found");
     return;

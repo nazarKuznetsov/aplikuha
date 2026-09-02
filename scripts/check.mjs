@@ -14,4 +14,8 @@ for (const script of ["start", "check", "test"]) {
   }
 }
 
+if (packageJson.scripts.test !== "node --test") {
+  throw new Error("The test script must run Node's test discovery.");
+}
+
 console.log("Scaffold checks passed.");
