@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Минималистичный таймер для коротких фокус-сессий." />
+    <meta name="theme-color" content="#f4f1e8" />
+    <title>25:00 · Фокус</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%231b4332%22/><circle cx=%2232%22 cy=%2232%22 r=%2212%22 fill=%22%23d7f27a%22/></svg>" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Фокус — на главную">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Фокус</span>
+        </a>
+        <span class="topbar-note">Сегодня — одна важная вещь</span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">ТИХИЙ ТАЙМЕР ДЛЯ ГЛУБОКОЙ РАБОТЫ</p>
+          <h1 id="page-title">Меньше переключений.<br />Больше сделанного.</h1>
+          <p class="lede">
+            Выберите одну задачу, запустите короткую сессию и не держите время в голове.
+          </p>
+
+          <label class="task-field">
+            <span>На чём фокусируемся?</span>
+            <input
+              data-task
+              type="text"
+              maxlength="100"
+              autocomplete="off"
+              placeholder="Например: закончить первый экран"
+            />
+          </label>
+
+          <div class="today-card" aria-label="Статистика за сегодня">
+            <p>Сегодня</p>
+            <div class="stats-grid">
+              <div>
+                <strong data-sessions>0</strong>
+                <span>сессий</span>
+              </div>
+              <div>
+                <strong data-minutes>0</strong>
+                <span>минут фокуса</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timer-panel" data-timer-shell>
+          <div class="timer-card">
+            <div class="timer-ring" aria-hidden="true">
+              <div class="timer-ring-inner">
+                <span class="timer-dot"></span>
+                <div class="timer-copy">
+                  <p class="timer-label">ФОКУС-СЕССИЯ</p>
+                  <time data-time aria-live="off">25:00</time>
+                  <p data-status aria-live="polite">Готовы начать?</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="presets" aria-label="Длительность сессии">
+              <button type="button" data-duration="900">15 мин</button>
+              <button type="button" data-duration="1500" class="is-active">25 мин</button>
+              <button type="button" data-duration="2700">45 мин</button>
+            </div>
+
+            <div class="actions">
+              <button class="primary-action" type="button" data-primary>Начать фокус</button>
+              <button class="icon-action" type="button" data-reset aria-label="Сбросить таймер" title="Сбросить">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4.6 9A8 8 0 1 1 4 14M4.6 9V4m0 5h5" />
+                </svg>
+              </button>
+            </div>
+            <p class="shortcut">Пробел — старт или пауза</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
