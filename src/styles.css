@@ -5,7 +5,7 @@
   --line: #d9e0e8;
   --ink: #17212b;
   --muted: #526170;
-  --faint: #6d7c8c;
+  --faint: #526170;
   --brand: #5138c8;
   --brand-dark: #38249b;
   --brand-soft: #efecff;
@@ -63,13 +63,13 @@ a { color: inherit; }
 
 .layout { display: grid; grid-template-columns: 13.25rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 5.5rem); padding-block: clamp(2rem, 5vw, 4.75rem); }
 .sidebar { align-self: start; padding-top: .5rem; }
-.eyebrow { margin: 0; color: var(--faint); font-size: .75rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow { margin: 0; color: var(--faint); font-size: .875rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .nav-list, .task-list { padding: 0; margin: 1rem 0 0; list-style: none; }
 .nav-list { display: grid; gap: .25rem; }
 .nav-link { display: flex; gap: .65rem; align-items: center; padding: .65rem .75rem; color: var(--muted); font-weight: 650; text-decoration: none; border-radius: .55rem; }
 .nav-link:hover { background: #edf1f5; color: var(--ink); }
 .nav-link.is-current { color: var(--brand-dark); background: var(--brand-soft); }
-.nav-link strong { min-width: 1.5rem; margin-left: auto; color: inherit; font-size: .8rem; text-align: center; background: rgb(81 56 200 / 12%); border-radius: 1rem; }
+.nav-link strong { min-width: 1.5rem; margin-left: auto; color: inherit; font-size: .875rem; text-align: center; background: rgb(81 56 200 / 12%); border-radius: 1rem; }
 .sidebar-note { padding: 1.1rem; margin-top: 2.25rem; color: var(--muted); font-size: .9rem; background: #eef2f6; border-radius: .75rem; }
 .sidebar-note p:last-child { margin: .4rem 0 0; }
 
@@ -99,7 +99,7 @@ h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
 .list-heading { display: flex; gap: 1rem; align-items: center; justify-content: space-between; margin-top: 2.4rem; }
 .list-heading h2 span { color: var(--muted); font-weight: 500; }
 .filters { display: flex; gap: .2rem; padding: .2rem; margin: 0; background: #e8edf2; border: 0; border-radius: .55rem; }
-.filter { padding: .35rem .6rem; color: var(--muted); font-size: .8rem; font-weight: 750; background: transparent; border: 1px solid transparent; border-radius: .4rem; }
+.filter { padding: .35rem .6rem; color: var(--muted); font-size: .875rem; font-weight: 750; background: transparent; border: 1px solid transparent; border-radius: .4rem; }
 .filter.is-selected { color: var(--ink); background: var(--surface); border-color: var(--line); box-shadow: 0 1px 2px rgb(15 23 42 / 10%); }
 
 .task-list { display: grid; gap: .65rem; }
@@ -107,7 +107,7 @@ h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
 .task-card:hover { border-color: #aeb9c6; box-shadow: 0 7px 16px rgb(28 43 58 / 7%); }
 .task-card.priority-high { border-left: 4px solid var(--danger); padding-left: .8rem; }
 .task-content p { margin: .18rem 0 0; color: var(--muted); font-size: .875rem; }
-.task-meta { display: flex; flex-wrap: wrap; gap: .4rem .7rem; align-items: center; margin-top: .65rem; color: var(--muted); font-size: .75rem; font-weight: 650; }
+.task-meta { display: flex; flex-wrap: wrap; gap: .4rem .7rem; align-items: center; margin-top: .65rem; color: var(--muted); font-size: .875rem; font-weight: 650; }
 .badge { display: inline-flex; padding: .18rem .45rem; color: #34506d; background: #e7eff7; border-radius: 1rem; }
 .badge-priority { color: #8f1238; background: #ffebf1; }
 .more-button { width: 2rem; height: 2rem; padding: 0; font-weight: 900; line-height: 1; border-radius: .4rem; }
@@ -130,7 +130,7 @@ h3 { margin: 0; font-size: 1rem; line-height: 1.35; }
   .sidebar-note { display: none; }
   .nav-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; margin-top: .65rem; }
   .nav-list li { min-width: 0; }
-  .nav-link { justify-content: center; gap: .3rem; padding: .6rem .35rem; font-size: .86rem; white-space: nowrap; border: 1px solid var(--line); }
+  .nav-link { justify-content: center; gap: .3rem; padding: .6rem .35rem; font-size: .875rem; white-space: nowrap; border: 1px solid var(--line); }
 }
 
 @media (max-width: 30rem) {
