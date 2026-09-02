@@ -1,6 +1,7 @@
 import {
   createTimer,
   formatTime,
+  localDateKey,
   pauseTimer,
   resetTimer,
   setDuration,
@@ -27,7 +28,7 @@ let lastCompletionCount = timer.completionCount;
 let completionFlashId = null;
 
 function todayKey() {
-  return new Date().toISOString().slice(0, 10);
+  return localDateKey();
 }
 
 function emptyStats() {

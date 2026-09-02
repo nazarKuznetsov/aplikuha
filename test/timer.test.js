@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   createTimer,
   formatTime,
+  localDateKey,
   pauseTimer,
   resetTimer,
   setDuration,
@@ -56,4 +57,8 @@ test("formats time with padded minutes and seconds", () => {
 test("rejects invalid durations", () => {
   assert.throws(() => createTimer(0), /positive integer/);
   assert.throws(() => setDuration(createTimer(60), 1.5), /positive integer/);
+});
+
+test("builds the statistics key from the local calendar date", () => {
+  assert.equal(localDateKey(new Date(2026, 8, 2, 0, 30)), "2026-09-02");
 });
