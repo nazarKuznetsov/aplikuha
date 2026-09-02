@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A clear, accessible daily task list.">
+    <title>Daymark — Today’s tasks</title>
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to today’s tasks</a>
+
+    <header class="site-header">
+      <div class="shell header-content">
+        <a class="brand" href="/" aria-label="Daymark home">
+          <span class="brand-mark" aria-hidden="true">✓</span>
+          <span>Daymark</span>
+        </a>
+        <button class="icon-button" type="button" aria-label="Open settings">
+          <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false"><path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Zm8.14-3.25a6.85 6.85 0 0 0-.1-1.17l2-1.55-2-3.46-2.37.96a8.43 8.43 0 0 0-2.03-1.17L15.28 3h-4l-.36 2.61a8.41 8.41 0 0 0-2.03 1.17l-2.37-.96-2 3.46 2 1.55a6.85 6.85 0 0 0 0 2.34l-2 1.55 2 3.46 2.37-.96a8.43 8.43 0 0 0 2.03 1.17l.36 2.61h4l.36-2.61a8.41 8.41 0 0 0 2.03-1.17l2.37.96 2-3.46-2-1.55c.07-.38.1-.78.1-1.17Z" /></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content" class="shell layout">
+      <aside class="sidebar" aria-label="Task navigation">
+        <p class="eyebrow">Your space</p>
+        <nav aria-label="Task views">
+          <ul class="nav-list">
+            <li><a class="nav-link is-current" href="#today" aria-current="page"><span aria-hidden="true">☀</span> Today <strong>5</strong></a></li>
+            <li><a class="nav-link" href="#upcoming"><span aria-hidden="true">→</span> Upcoming</a></li>
+            <li><a class="nav-link" href="#completed"><span aria-hidden="true">✓</span> Completed</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-note">
+          <p class="eyebrow">Daily intention</p>
+          <p>Choose one important task before opening anything else.</p>
+        </div>
+      </aside>
+
+      <section id="today" class="task-panel" aria-labelledby="page-title">
+        <div class="title-row">
+          <div>
+            <p class="eyebrow">Tuesday, September 2</p>
+            <h1 id="page-title">Make today count.</h1>
+          </div>
+          <a class="date-link" href="#upcoming">View calendar <span aria-hidden="true">→</span></a>
+        </div>
+
+        <section class="progress-card" aria-labelledby="progress-title">
+          <div class="progress-copy">
+            <div>
+              <h2 id="progress-title">Your daily progress</h2>
+              <p>Two of five tasks complete</p>
+            </div>
+            <strong>40%</strong>
+          </div>
+          <div class="progress-track" role="progressbar" aria-labelledby="progress-title" aria-valuemin="0" aria-valuemax="5" aria-valuenow="2">
+            <span class="progress-value"></span>
+          </div>
+        </section>
+
+        <form class="add-task" action="#today">
+          <label for="new-task">What needs your attention?</label>
+          <div class="add-task-controls">
+            <input id="new-task" name="new-task" type="text" placeholder="Add a task for today" autocomplete="off">
+            <button class="primary-button" type="submit">Add task</button>
+          </div>
+        </form>
+
+        <div class="list-heading">
+          <h2>Today’s tasks <span>(5)</span></h2>
+          <fieldset class="filters">
+            <legend class="sr-only">Filter tasks</legend>
+            <button type="button" class="filter is-selected" aria-pressed="true">All</button>
+            <button type="button" class="filter" aria-pressed="false">Active</button>
+            <button type="button" class="filter" aria-pressed="false">Done</button>
+          </fieldset>
+        </div>
+
+        <ul class="task-list" aria-label="Today’s tasks">
+          <li class="task-card priority-high">
+            <label class="check-control"><input type="checkbox" aria-label="Mark Prepare project update as complete"><span aria-hidden="true"></span></label>
+            <div class="task-content"><h3>Prepare project update</h3><p>Outline the milestones and open questions for the team.</p><div class="task-meta"><span class="badge badge-priority">High priority</span><span>Due 10:00</span></div></div>
+            <button class="more-button" type="button" aria-label="More actions for Prepare project update">•••</button>
+          </li>
+          <li class="task-card">
+            <label class="check-control"><input type="checkbox" aria-label="Mark Review design notes as complete"><span aria-hidden="true"></span></label>
+            <div class="task-content"><h3>Review design notes</h3><p>Leave focused feedback on the new onboarding flow.</p><div class="task-meta"><span class="badge">Work</span><span>Due 13:30</span></div></div>
+            <button class="more-button" type="button" aria-label="More actions for Review design notes">•••</button>
+          </li>
+          <li class="task-card">
+            <label class="check-control"><input type="checkbox" aria-label="Mark Schedule a walk as complete"><span aria-hidden="true"></span></label>
+            <div class="task-content"><h3>Schedule a walk</h3><p>Block twenty minutes outside before the afternoon call.</p><div class="task-meta"><span class="badge">Wellbeing</span><span>Due 16:00</span></div></div>
+            <button class="more-button" type="button" aria-label="More actions for Schedule a walk">•••</button>
+          </li>
+          <li class="task-card is-complete">
+            <label class="check-control"><input type="checkbox" checked aria-label="Mark Reply to Maya as incomplete"><span aria-hidden="true"></span></label>
+            <div class="task-content"><h3>Reply to Maya</h3><p>Confirm the time for tomorrow’s planning session.</p><div class="task-meta"><span class="badge">Personal</span><span>Completed</span></div></div>
+            <button class="more-button" type="button" aria-label="More actions for Reply to Maya">•••</button>
+          </li>
+          <li class="task-card is-complete">
+            <label class="check-control"><input type="checkbox" checked aria-label="Mark Clear inbox as incomplete"><span aria-hidden="true"></span></label>
+            <div class="task-content"><h3>Clear inbox</h3><p>Archive the small decisions that no longer need attention.</p><div class="task-meta"><span class="badge">Admin</span><span>Completed</span></div></div>
+            <button class="more-button" type="button" aria-label="More actions for Clear inbox">•••</button>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
