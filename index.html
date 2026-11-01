@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7fb" />
+    <title>Сегодня — задачи</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#tasks">К списку задач</a>
+    <main class="app-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Мой день</p>
+          <h1>Сегодня</h1>
+          <p class="date" aria-label="Текущая дата">Вторник, 2 сентября</p>
+        </div>
+        <button class="icon-button" type="button" aria-label="Открыть настройки">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Zm8-3.25a6.8 6.8 0 0 0-.1-1.16l2-1.56-2-3.46-2.37.95a7.8 7.8 0 0 0-2-1.16L15.17 3h-4l-.36 2.56a7.8 7.8 0 0 0-2 1.16l-2.37-.95-2 3.46 2 1.56a6.8 6.8 0 0 0 0 2.32l-2 1.56 2 3.46 2.37-.95a7.8 7.8 0 0 0 2 1.16l.36 2.56h4l.36-2.56a7.8 7.8 0 0 0 2-1.16l2.37.95 2-3.46-2-1.56c.07-.38.1-.77.1-1.16Z" /></svg>
+        </button>
+      </header>
+
+      <section class="progress-card" aria-labelledby="progress-title">
+        <div class="progress-copy">
+          <p class="section-label" id="progress-title">Прогресс на сегодня</p>
+          <p><strong>3 из 5</strong> задач выполнено</p>
+        </div>
+        <div class="progress-ring" role="img" aria-label="Выполнено 60 процентов задач"><span>60%</span></div>
+      </section>
+
+      <section class="task-panel" aria-labelledby="tasks-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="tasks-title">Задачи</h2>
+            <p id="task-count">Осталось 2</p>
+          </div>
+          <button class="text-button" type="button">Очистить выполненные</button>
+        </div>
+
+        <form class="add-task" action="#" aria-label="Добавить задачу">
+          <label class="sr-only" for="new-task">Новая задача</label>
+          <input id="new-task" name="task" type="text" placeholder="Добавить задачу" />
+          <button type="submit">Добавить</button>
+        </form>
+
+        <ul class="task-list" id="tasks" aria-describedby="task-count">
+          <li class="task-item task-item--priority">
+            <label class="task-toggle">
+              <input type="checkbox" />
+              <span class="checkbox" aria-hidden="true"></span>
+              <span class="task-content"><span class="task-title">Подготовить презентацию</span><span class="task-meta">Работа · до 11:00</span></span>
+            </label>
+            <button class="more-button" type="button" aria-label="Действия для задачи «Подготовить презентацию»"><span></span><span></span><span></span></button>
+          </li>
+          <li class="task-item">
+            <label class="task-toggle">
+              <input type="checkbox" />
+              <span class="checkbox" aria-hidden="true"></span>
+              <span class="task-content"><span class="task-title">Забрать посылку</span><span class="task-meta">Личное · до 18:00</span></span>
+            </label>
+            <button class="more-button" type="button" aria-label="Действия для задачи «Забрать посылку»"><span></span><span></span><span></span></button>
+          </li>
+          <li class="task-item task-item--completed">
+            <label class="task-toggle">
+              <input type="checkbox" checked />
+              <span class="checkbox" aria-hidden="true"></span>
+              <span class="task-content"><span class="task-title">Ответить на письма</span><span class="task-meta">Работа</span></span>
+            </label>
+            <button class="more-button" type="button" aria-label="Действия для задачи «Ответить на письма»"><span></span><span></span><span></span></button>
+          </li>
+          <li class="task-item task-item--completed">
+            <label class="task-toggle">
+              <input type="checkbox" checked />
+              <span class="checkbox" aria-hidden="true"></span>
+              <span class="task-content"><span class="task-title">Прогулка после обеда</span><span class="task-meta">Здоровье</span></span>
+            </label>
+            <button class="more-button" type="button" aria-label="Действия для задачи «Прогулка после обеда»"><span></span><span></span><span></span></button>
+          </li>
+          <li class="task-item task-item--completed">
+            <label class="task-toggle">
+              <input type="checkbox" checked />
+              <span class="checkbox" aria-hidden="true"></span>
+              <span class="task-content"><span class="task-title">Составить план недели</span><span class="task-meta">Личное</span></span>
+            </label>
+            <button class="more-button" type="button" aria-label="Действия для задачи «Составить план недели»"><span></span><span></span><span></span></button>
+          </li>
+        </ul>
+
+        <div class="empty-state" hidden aria-label="Нет задач">
+          <span class="empty-state__icon" aria-hidden="true">✓</span>
+          <h3>На сегодня всё</h3>
+          <p>Добавьте задачу, когда появится новый план.</p>
+        </div>
+        <p class="status-message" hidden role="status">Задача добавлена.</p>
+        <p class="error-message" hidden role="alert">Не удалось сохранить задачу. Попробуйте ещё раз.</p>
+      </section>
+    </main>
+  </body>
+</html>

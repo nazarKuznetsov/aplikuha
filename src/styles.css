@@ -1,0 +1,100 @@
+:root {
+  color-scheme: light;
+  --canvas: #f7f7fb;
+  --surface: #ffffff;
+  --ink: #20202b;
+  --muted: #727284;
+  --line: #e9e9f0;
+  --accent: #6256e8;
+  --accent-soft: #efedff;
+  --success: #2c9a6a;
+  --shadow: 0 14px 40px rgb(36 34 70 / 8%);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { min-width: 320px; background: var(--canvas); }
+
+body { min-width: 0; margin: 0; color: var(--ink); background: var(--canvas); }
+
+button, input { font: inherit; }
+
+button { cursor: pointer; }
+
+.skip-link {
+  position: fixed; top: 0.75rem; left: 0.75rem; z-index: 2; padding: 0.65rem 0.9rem; color: #fff; background: var(--accent); border-radius: 0.5rem; transform: translateY(-150%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.app-shell { width: min(100% - 2rem, 44rem); margin: 0 auto; padding: clamp(1.5rem, 5vw, 4.5rem) 0 3rem; }
+
+.page-header, .section-heading, .task-item, .task-toggle, .progress-card, .add-task { display: flex; align-items: center; }
+
+.page-header { justify-content: space-between; gap: 1rem; margin-bottom: 1.75rem; }
+
+.eyebrow, .date, .section-label, .task-meta, .section-heading p { margin: 0; color: var(--muted); }
+.eyebrow, .section-label { font-size: 0.75rem; font-weight: 750; letter-spacing: 0.09em; text-transform: uppercase; }
+h1, h2, h3, p { overflow-wrap: break-word; }
+h1 { margin: 0.18rem 0; font-size: clamp(2rem, 8vw, 3rem); line-height: 1.06; letter-spacing: -0.045em; }
+h2 { margin: 0; font-size: 1.2rem; letter-spacing: -0.02em; }
+
+.icon-button { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; place-items: center; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 0.85rem; }
+.icon-button svg { width: 1.25rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; }
+
+.progress-card { justify-content: space-between; gap: 1rem; padding: 1.25rem; margin-bottom: 1.25rem; background: var(--accent); color: #fff; border-radius: 1.25rem; box-shadow: 0 12px 28px rgb(98 86 232 / 24%); }
+.progress-card .section-label { color: rgb(255 255 255 / 65%); }
+.progress-copy > p:last-child { margin: 0.4rem 0 0; font-size: 0.95rem; }
+.progress-ring { display: grid; width: 3.75rem; height: 3.75rem; flex: 0 0 auto; place-items: center; font-size: 0.76rem; font-weight: 800; background: radial-gradient(circle, var(--accent) 57%, transparent 59%), conic-gradient(#fff 60%, rgb(255 255 255 / 24%) 0); border-radius: 50%; }
+
+.task-panel { padding: clamp(1rem, 4vw, 1.5rem); background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; box-shadow: var(--shadow); }
+.section-heading { justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.section-heading p { margin-top: 0.25rem; font-size: 0.84rem; }
+.text-button { padding: 0.35rem 0; color: var(--accent); font-size: 0.8rem; font-weight: 700; text-align: right; background: none; border: 0; }
+
+.add-task { gap: 0.6rem; padding: 0.4rem; margin-bottom: 1rem; background: #f5f5fa; border: 1px solid transparent; border-radius: 0.9rem; }
+.add-task:focus-within { border-color: var(--accent); background: #fff; box-shadow: 0 0 0 3px var(--accent-soft); }
+.add-task input { width: 0; min-width: 0; flex: 1 1 auto; padding: 0.4rem 0.25rem 0.4rem 0.45rem; color: var(--ink); background: transparent; border: 0; outline: 0; }
+.add-task input::placeholder { color: #8c8c9d; }
+.add-task button { flex: 0 0 auto; padding: 0.58rem 0.8rem; color: #fff; font-size: 0.82rem; font-weight: 750; background: var(--accent); border: 0; border-radius: 0.62rem; }
+
+.task-list { padding: 0; margin: 0; list-style: none; }
+.task-item { min-width: 0; justify-content: space-between; gap: 0.75rem; padding: 0.92rem 0; border-top: 1px solid var(--line); }
+.task-item--priority { position: relative; }
+.task-item--priority::before { position: absolute; top: 50%; left: -1.5rem; width: 0.2rem; height: 1.8rem; content: ""; background: #f2a23b; border-radius: 0 0.2rem 0.2rem 0; transform: translateY(-50%); }
+.task-toggle { min-width: 0; gap: 0.8rem; cursor: pointer; }
+.task-toggle input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.checkbox { display: grid; width: 1.3rem; height: 1.3rem; flex: 0 0 auto; place-items: center; border: 1.5px solid #c9c9d5; border-radius: 50%; }
+.task-toggle input:checked + .checkbox { background: var(--success); border-color: var(--success); }
+.task-toggle input:checked + .checkbox::after { width: 0.37rem; height: 0.65rem; content: ""; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-0.05rem, -0.08rem); }
+.task-toggle input:focus-visible + .checkbox { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+.task-content { min-width: 0; display: grid; gap: 0.18rem; }
+.task-title { font-size: 0.96rem; font-weight: 650; line-height: 1.25; }
+.task-meta { font-size: 0.77rem; }
+.task-item--completed .task-title { color: #9797a6; text-decoration: line-through; text-decoration-thickness: 1px; }
+.task-item--completed .task-meta { color: #a7a7b4; }
+.more-button { display: grid; width: 2rem; height: 2rem; flex: 0 0 auto; place-items: center; align-content: center; gap: 0.17rem; color: var(--muted); background: transparent; border: 0; border-radius: 0.5rem; }
+.more-button span { width: 0.18rem; height: 0.18rem; background: currentColor; border-radius: 50%; }
+
+.empty-state { padding: 2.5rem 1rem 1.5rem; text-align: center; }
+.empty-state__icon { display: inline-grid; width: 2.5rem; height: 2.5rem; place-items: center; margin-bottom: 0.75rem; color: var(--success); font-size: 1.25rem; font-weight: 800; background: #e6f6ee; border-radius: 50%; }
+.empty-state h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.empty-state p, .status-message, .error-message { margin: 0; color: var(--muted); font-size: 0.88rem; }
+.status-message, .error-message { padding: 0.8rem 1rem; margin-top: 1rem; border-radius: 0.75rem; }
+.status-message { color: #176344; background: #e6f6ee; }
+.error-message { color: #9d263b; background: #ffedf0; }
+
+button:focus-visible, .text-button:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+
+@media (max-width: 390px) {
+  .app-shell { width: min(100% - 1.25rem, 44rem); padding-top: 1.25rem; }
+  .task-panel { padding: 1rem; }
+  .task-item--priority::before { left: -1rem; }
+  .text-button { max-width: 9rem; }
+}
+
+@media (min-width: 700px) {
+  .task-panel { padding: 1.6rem; }
+  .progress-card { padding: 1.5rem; }
+}
